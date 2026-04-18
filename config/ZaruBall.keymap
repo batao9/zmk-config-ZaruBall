@@ -137,8 +137,8 @@
 &kp ESC       &kp N1  &kp N2      &kp N3    &kp N4         &kp N5                            &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                 &kp NUMBER_6  &kp N7            &kp N8  &kp N9     &kp N0   &kp BACKSPACE
 &kp TAB       &kp Q   &kp W       &kp E     &kp R          &kp T                             &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U             &kp I   &kp O      &kp P    &kp MINUS
 &kp LEFT_ALT  &kp A   &kp S       &kp D     &kp F          &kp G               &kp EQUAL     &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &kp LBKT   &kp H             &kp J   &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT     &kp Z   &kp X       &kp C     &kp V          &kp B               &kp GRAVE     &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &kp RBKT   &kp N             &kp M   &kp COMMA  &kp DOT  &kp FSLH  &lt 3 SINGLE_QUOTE
-&kp LCTRL             &kp C_MUTE  &kp LWIN  &kp RIGHT_ALT  &lt 1 LANG2         &kp SPACE                                                            &lt 1 SPACE  &lt 1 LANG1                                            &kp RCTRL
+&kp LSHFT     &kp Z   &kp X       &kp C     &kp V          &kp B               &kp GRAVE     &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &kp RBKT   &kp N             &kp M   &kp COMMA  &kp DOT  &kp SINGLE_QUOTE  &lt 3 FSLH
+&kp LCTRL             &kp C_MUTE  &kp LWIN  &kp RIGHT_ALT  &lt 1 LANG2         &kp SPACE                                                            &lt 1 SPACE  &lt 1 LANG1                                            &to MOUSE
             >;
         };
 
@@ -182,11 +182,11 @@
             display-name = "Mouse";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans     &trans  &trans
-&trans          &trans  &trans  &trans  &trans  &trans                          &trans  &trans                                      &trans
+&to_layer_0 ESC  &to_layer_0 N1  &to_layer_0 N2  &to_layer_0 N3  &to_layer_0 N4  &to_layer_0 N5                  &to_layer_0 KP_N7     &to_layer_0 KP_N8  &to_layer_0 KP_N9   &to_layer_0 KP_DIVIDE                  &to_layer_0 NUMBER_6  &to_layer_0 N7     &to_layer_0 N8  &to_layer_0 N9  &to_layer_0 N0  &to_layer_0 BACKSPACE
+&to_layer_0 TAB  &to_layer_0 Q   &to_layer_0 W   &to_layer_0 E   &to_layer_0 R   &to_layer_0 T                   &to_layer_0 KP_N4     &to_layer_0 KP_N5  &to_layer_0 KP_N6   &to_layer_0 KP_MULTIPLY                &to_layer_0 Y         &to_layer_0 U      &to_layer_0 I   &to_layer_0 O   &to_layer_0 P   &to_layer_0 MINUS
+&trans           &to_layer_0 A   &to_layer_0 S   &to_layer_0 D   &to_layer_0 F   &to_layer_0 G   &to_layer_0 EQUAL  &to_layer_0 KP_N1     &to_layer_0 KP_N2  &to_layer_0 KP_N3   &to_layer_0 KP_MINUS       &to_layer_0 LBKT   &to_layer_0 H      &mkp LCLK       &mkp MCLK       &mkp RCLK       &to_layer_0 SEMI  &to_layer_0 ENTER
+&trans           &to_layer_0 Z   &to_layer_0 X   &to_layer_0 C   &to_layer_0 V   &to_layer_0 B   &to_layer_0 GRAVE  &to_layer_0 KP_ENTER  &to_layer_0 KP_N0  &to_layer_0 KP_DOT  &to_layer_0 KP_PLUS        &to_layer_0 RBKT   &to_layer_0 N      &mkp MB4        &mkp MB5        &to_layer_0 DOT  &to_layer_0 SINGLE_QUOTE  &to_layer_0 FSLH
+&trans                   &to_layer_0 C_MUTE  &to_layer_0 LWIN  &trans  &to_layer_0 LANG2  &to_layer_0 SPACE                                  &to_layer_0 SPACE  &to_layer_0 LANG1                                  &kp RCTRL
             >;
         };
 
