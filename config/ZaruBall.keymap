@@ -18,6 +18,10 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 // トラックボールの設定(AML, SCROLL)
 
 &trackball_listener {
