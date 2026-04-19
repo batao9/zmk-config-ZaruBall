@@ -65,7 +65,7 @@
             tap-ms = <20>; // スクロールのタップ時間
         };
 
-        scroll_down_up_keep_mouse: behavior_sensor_rotate_mouse_wheel_down_up_keep_mouse {
+        scroll_down_up_keep_mouse: sensor_rotate_keep_mouse {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&scroll_down_keep_mouse>, <&scroll_up_keep_mouse>;
