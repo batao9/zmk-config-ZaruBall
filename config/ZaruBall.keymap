@@ -65,6 +65,14 @@
             tap-ms = <20>; // スクロールのタップ時間
         };
 
+        scroll_down_up_keep_mouse: behavior_sensor_rotate_mouse_wheel_down_up_keep_mouse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&scroll_down_keep_mouse>, <&scroll_up_keep_mouse>;
+
+            tap-ms = <20>; // スクロールのタップ時間
+        };
+
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -84,6 +92,36 @@
 &sl { release-after-ms = <250>; }; // time needed for double click (for mkp_exit_AML)
 / {
     macros {
+        // Keep Mouse layer active when scrolling with the rotary encoder in Mouse layer
+
+        scroll_down_keep_mouse: scroll_down_keep_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&sl MOUSE>;
+            label = "SCROLL_DOWN_KEEP_MOUSE";
+        };
+
+        scroll_up_keep_mouse: scroll_up_keep_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&sl MOUSE>;
+            label = "SCROLL_UP_KEEP_MOUSE";
+        };
+
+        scroll_left_keep_mouse: scroll_left_keep_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&sl MOUSE>;
+            label = "SCROLL_LEFT_KEEP_MOUSE";
+        };
+
+        scroll_right_keep_mouse: scroll_right_keep_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&sl MOUSE>;
+            label = "SCROLL_RIGHT_KEEP_MOUSE";
+        };
+
         // When in AML, move to default layer when key (except mouse button) pressed
 
         to_layer_0: to_layer_0 {
@@ -180,12 +218,12 @@
 
         mouse_layer {
             display-name = "Mouse";
-            sensor-bindings = <&scroll_down_up>;
+            sensor-bindings = <&scroll_down_up_keep_mouse>;
             bindings = <
 &to_layer_0 ESC  &to_layer_0 N1  &to_layer_0 N2  &to_layer_0 N3  &to_layer_0 N4  &to_layer_0 N5                  &to_layer_0 KP_N7     &to_layer_0 KP_N8  &to_layer_0 KP_N9   &to_layer_0 KP_DIVIDE                  &to_layer_0 NUMBER_6  &to_layer_0 N7     &to_layer_0 N8  &to_layer_0 N9  &to_layer_0 N0  &to_layer_0 BACKSPACE
 &to_layer_0 TAB  &to_layer_0 Q   &to_layer_0 W   &to_layer_0 E   &to_layer_0 R   &to_layer_0 T                   &to_layer_0 KP_N4     &to_layer_0 KP_N5  &to_layer_0 KP_N6   &to_layer_0 KP_MULTIPLY                &to_layer_0 Y         &to_layer_0 U      &to_layer_0 I   &to_layer_0 O   &to_layer_0 P   &to_layer_0 MINUS
-&trans           &to_layer_0 A   &to_layer_0 S   &to_layer_0 D   &to_layer_0 F   &to_layer_0 G   &to_layer_0 EQUAL  &to_layer_0 KP_N1     &to_layer_0 KP_N2  &to_layer_0 KP_N3   &to_layer_0 KP_MINUS       &to_layer_0 LBKT   &to_layer_0 H      &mkp LCLK       &mkp MCLK       &mkp RCLK       &to_layer_0 SEMI  &to_layer_0 ENTER
-&trans           &to_layer_0 Z   &to_layer_0 X   &to_layer_0 C   &to_layer_0 V   &to_layer_0 B   &to_layer_0 GRAVE  &to_layer_0 KP_ENTER  &to_layer_0 KP_N0  &to_layer_0 KP_DOT  &to_layer_0 KP_PLUS        &to_layer_0 RBKT   &to_layer_0 N      &mkp MB4        &mkp MB5        &to_layer_0 DOT  &to_layer_0 SINGLE_QUOTE  &to_layer_0 FSLH
+&trans           &to_layer_0 A   &to_layer_0 S   &to_layer_0 D   &to_layer_0 F   &scroll_up_keep_mouse    &scroll_left_keep_mouse   &to_layer_0 KP_N1     &to_layer_0 KP_N2  &to_layer_0 KP_N3   &to_layer_0 KP_MINUS       &to_layer_0 LBKT   &to_layer_0 H      &mkp LCLK       &mkp MCLK       &mkp RCLK       &to_layer_0 SEMI  &to_layer_0 ENTER
+&trans           &to_layer_0 Z   &to_layer_0 X   &to_layer_0 C   &to_layer_0 V   &scroll_down_keep_mouse  &scroll_right_keep_mouse  &to_layer_0 KP_ENTER  &to_layer_0 KP_N0  &to_layer_0 KP_DOT  &to_layer_0 KP_PLUS        &to_layer_0 RBKT   &to_layer_0 N      &mkp MB4        &mkp MB5        &to_layer_0 DOT  &to_layer_0 SINGLE_QUOTE  &to_layer_0 FSLH
 &trans                   &to_layer_0 C_MUTE  &to_layer_0 LWIN  &trans  &to_layer_0 LANG2  &to_layer_0 SPACE                                  &to_layer_0 SPACE  &to_layer_0 LANG1                                  &kp RCTRL
             >;
         };
