@@ -191,12 +191,6 @@
             >;
         };
 
-        // Extra layer can be added in ZMK STUDIO
-
-        extra1 { status = "reserved"; };
-
-        extra2 { status = "reserved"; };
-
         auto_mouse_layer {
             display-name = "Auto Mouse";
             sensor-bindings = <&scroll_down_up>;
@@ -208,5 +202,11 @@
 &trans                   &to_layer_0 C_MUTE  &to_layer_0 LWIN  &trans  &to_layer_0 LANG2  &to_layer_0 SPACE                                  &to_layer_0 SPACE  &to_layer_0 LANG1                                  &kp RCTRL
             >;
         };
+
+        // Extra layer can be added in ZMK STUDIO
+
+        extra1 { status = "reserved"; };
+
+        extra2 { status = "reserved"; };
     };
 };
