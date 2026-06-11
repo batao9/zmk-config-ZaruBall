@@ -147,7 +147,7 @@
 &kp TAB       &kp Q   &kp W       &kp E     &kp R          &kp T                             &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U             &kp I   &kp O      &kp P    &kp MINUS
 &kp LEFT_ALT  &kp A   &kp S       &kp D     &kp F          &kp G               &kp EQUAL     &kp KP_N1     &kp KP_N2  &kp KP_N3       &kp KP_MINUS    &kp LBKT   &kp H             &kp J   &kp K      &kp L    &kp SEMI  &kp ENTER
 &kp LSHFT     &kp Z   &kp X       &kp C     &kp V          &kp B               &kp GRAVE     &kp KP_N0     &kp KP_DOT &kp KP_NUMLOCK  &kp KP_PLUS     &kp RBKT   &kp N             &kp M   &kp COMMA  &kp DOT  &kp SINGLE_QUOTE  &lt 3 FSLH
-&kp LCTRL             &kp C_MUTE  &kp LWIN  &kp DEL        &lt 1 LANG2         &kp SPACE                                                            &lt 1 SPACE  &lt 1 LANG1                                            &scroll_mouse SCROLL MOUSE
+&kp LCTRL             &kp C_MUTE  &kp LWIN  &kp DEL        &lt 1 LANG2         &kp SPACE                                                            &mt RSHFT SPACE  &lt 1 LANG1                                            &scroll_mouse SCROLL MOUSE
             >;
         };
 

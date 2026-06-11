@@ -21,6 +21,14 @@
     interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;//IGPIO
 };
 
+&spi0 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
 // pmw-3610
 &trackball_listener {
     status = "okay";

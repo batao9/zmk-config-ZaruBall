@@ -21,11 +21,17 @@ if SHIELD_ZARUBALL_RIGHT
 
 # Other settings
 
+config INPUT
+    default y
+
 config ZMK_POINTING
     default y
 
 # Assuming pointing device uses SPI
 config SPI
+    default y
+
+config PMW3610
     default y
 
 endif
