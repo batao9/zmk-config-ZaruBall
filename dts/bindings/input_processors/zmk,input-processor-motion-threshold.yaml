@@ -1,0 +1,30 @@
+# Copyright (c) 2026 batao9
+# SPDX-License-Identifier: MIT
+
+description: Input processor that delegates after pointer displacement exceeds a threshold
+
+compatible: "zmk,input-processor-motion-threshold"
+
+include: ip_two_param.yaml
+
+properties:
+  delegate:
+    type: phandle
+    required: true
+    description: Input processor to invoke after the movement threshold is reached
+
+  threshold:
+    type: int
+    required: true
+    description: Required net XY displacement in sensor counts
+
+  activation-window-ms:
+    type: int
+    required: true
+    description: Inactivity interval after which accumulated displacement is reset
+
+  require-prior-idle-ms:
+    type: int
+    required: false
+    default: 0
+    description: Time that must pass after the last key press before accumulating movement

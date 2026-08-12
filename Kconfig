@@ -1,0 +1,8 @@
+config ZMK_INPUT_PROCESSOR_MOTION_THRESHOLD
+    bool "Motion threshold input processor"
+    default y
+    depends on ZMK_POINTING
+    depends on DT_HAS_ZMK_INPUT_PROCESSOR_MOTION_THRESHOLD_ENABLED
+    help
+      Delay a delegated input processor until pointer movement exceeds a
+      configurable displacement threshold.

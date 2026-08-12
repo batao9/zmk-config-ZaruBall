@@ -15,12 +15,27 @@
 #define AUTO_MOUSE 5
 #define SCROLL 1
 
+#define AML_PRIOR_IDLE_MS 200
+#define AML_MOTION_THRESHOLD 40
+#define AML_ACTIVATION_WINDOW_MS 80
+
 // スクロール量の設定
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 &zip_temp_layer {
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <AML_PRIOR_IDLE_MS>;
+};
+
+/ {
+    zip_motion_threshold: zip_motion_threshold {
+        compatible = "zmk,input-processor-motion-threshold";
+        #input-processor-cells = <2>;
+        delegate = <&zip_temp_layer>;
+        threshold = <AML_MOTION_THRESHOLD>;
+        activation-window-ms = <AML_ACTIVATION_WINDOW_MS>;
+        require-prior-idle-ms = <AML_PRIOR_IDLE_MS>;
+    };
 };
 
 // トラックボールの設定(AML, SCROLL)
@@ -29,7 +44,7 @@
     input-processors = <
                         // トラックボールの向きの変更(ZaruBallv1とv2,v3ではセンサーの向きが異なるので調整してください。デフォルトではv2,v3用)
                          &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
-                         &zip_temp_layer AUTO_MOUSE 500 // 500ms stay at auto mouse layer
+                         &zip_motion_threshold AUTO_MOUSE 500 // 500ms stay at auto mouse layer
     >;
 
     scroller {
